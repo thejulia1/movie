@@ -13,7 +13,7 @@ def randomMovie():
         baseurl = "https://api.themoviedb.org/3"+ section + str(randomNum) +"?api_key=" + apiKey
         response = requests.get(baseurl)
         randMovieDict = response.json()
-        if list(randMovieDict.keys())[0] == "succuess":
+        if list(randMovieDict.keys())[0] == "succuess" and list(randMovieDict.values())[0] == True:
             continue
         elif list(randMovieDict.keys())[0] == "adult":
             randMovie = randMovieDict["original_title"]
